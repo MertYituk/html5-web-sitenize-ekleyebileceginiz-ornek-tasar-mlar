@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uygulama 13 || Star Rating </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        span:hover{
+
+            cursor:pointer;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <p>Lütfen oy kullanınız : </p>
+
+    <span onclick="changeColor(0)" id="spn1" class="fa fa-star fa-2x"></span>
+    <span onclick="changeColor(1)" id="spn2" class="fa fa-star fa-2x"></span>
+    <span onclick="changeColor(2)" id="spn3" class="fa fa-star fa-2x"></span>
+    <span onclick="changeColor(3)" id="spn4" class="fa fa-star fa-2x"></span>
+    <span onclick="changeColor(4)" id="spn5" class="fa fa-star fa-2x"></span>
+
+
+
+    <script>
+
+        function changeColor(parameter) {
+
+            var stars = ["spn1","spn2","spn3","spn4","spn5"];
+
+            for (i = 0; i <= parameter; i++) {
+
+                var element = document.getElementById(stars[i]);
+                element.style.color = "orange";
+
+            }
+
+            var k = stars.length - 1;
+
+            for (k; k > parameter; k--) {
+
+                var element = document.getElementById(stars[k]);
+                element.style.color = "black";
+
+            }
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uygulama 16 || Password Visibility</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/aeca299997.js" crossorigin="anonymous"></script>
+    <style>
+
+        .container{
+            position:relative;
+            display:inline-block;
+            margin:20px;
+        }
+        #iconEye{
+            position:absolute;
+            right:5px;
+            top:2px;
+        }
+        
+    </style>
+    
+</head>
+
+<body>
+    
+
+    <div class="container">
+
+        <input type="password" id="passwordInput" />
+        <i class="far fa-eye" id="iconEye"
+           onclick="changeVisibility()"
+           onmousedown="setVisible()"
+           onmouseup="setInvisible()"
+           ></i>
+
+    </div>
+
+
+    <script>
+
+        var passwordInput = document.getElementById("passwordInput");
+        /*
+        function changeVisibility() {
+            passwordInput.setAttribute("type", "text");
+        }
+        */
+        function setVisible() {
+            passwordInput.setAttribute("type", "text");
+        }
+        function setInvisible() {
+            passwordInput.setAttribute("type", "password");
+        }
+
+    </script>
+
+
+
+</body>
+</html>

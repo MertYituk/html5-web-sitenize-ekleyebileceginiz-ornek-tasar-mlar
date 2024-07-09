@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uygulama 17 || Dark Mode</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+        }
+
+        #checboxTest {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                width: 50px;
+                height: 40px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                line-height: 40px;
+                transition: .4s;
+            }
+
+        input:checked + .slider {
+            background-color: white;
+        }
+
+            input:checked + .slider:before {
+                transform: translateX(50px);
+                background-color: green;
+                content: "Evet";
+            }
+
+        input:not(checked) + .slider:before {
+            background-color: red;
+            content: "Hayır";
+        }
+        .darkmode{
+            background-color:#444;
+            color:white;
+        }
+    </style>
+
+</head>
+
+<body class="darkmode">
+
+    <label>Gece Modu : </label>
+    <label class="switch">
+        <input type="checkbox" id="checboxTest" onclick="switchTest()" checked />
+        <span class="slider"></span>
+
+
+    </label>
+
+
+    <br /><br />
+
+          <div class="div1" id="div1">
+
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis dui ex. Nullam lobortis tortor quis libero pulvinar, ac condimentum ligula posuere. Integer porta consequat orci sed dictum. Morbi finibus risus sit amet placerat sollicitudin. Suspendisse potenti. Mauris facilisis justo vel faucibus imperdiet. Aenean tempus mattis turpis et dapibus. In hac habitasse platea dictumst. Quisque felis magna, cursus nec diam nec, gravida pharetra massa. Praesent turpis dui, hendrerit sit amet auctor quis, elementum a mi. Vestibulum efficitur auctor elit. Donec id purus mi. Mauris ullamcorper neque lacinia sagittis egestas. In ac neque ligula. Mauris condimentum ex nisl, nec tempor lectus lacinia ac. Maecenas euismod tincidunt accumsan.
+
+              Nam scelerisque non nisl volutpat interdum. Quisque sed venenatis nisi, ut semper mauris. Proin aliquam elementum gravida. In sagittis sollicitudin tortor et laoreet. Vivamus lacinia et leo eu tempus. Cras sit amet pretium enim, vel feugiat nisl. Fusce scelerisque, arcu non porta volutpat, arcu nunc interdum risus, eget venenatis dui metus et lorem. Curabitur quis luctus purus. Integer ex mi, pulvinar nec mi in, eleifend semper est. Aenean pharetra, lacus in tempus viverra, nisi tortor pretium sapien, vitae dictum dolor augue sit amet libero. Fusce ultricies, metus maximus interdum cursus, justo lacus sodales lacus, sed pretium ante purus et tortor. Mauris vel vestibulum quam. Nunc maximus vehicula lectus.
+
+              Morbi quis ligula nec leo lobortis iaculis. Sed at pulvinar sem, dapibus auctor massa. Aliquam in elit in ipsum finibus tempus. Phasellus iaculis lacinia luctus. Aenean augue sapien, interdum sagittis suscipit vitae, auctor sit amet velit. Maecenas iaculis elementum nisi. Vestibulum eu varius dui. Vestibulum tempor luctus enim eget laoreet. Etiam dignissim feugiat augue quis ultricies. Nullam tellus sem, sodales quis placerat quis, eleifend sed ipsum. Suspendisse mattis varius quam, vitae malesuada magna faucibus sit amet. Etiam porta molestie viverra. Sed a eros quis tellus scelerisque mattis. Aliquam ut sollicitudin risus.
+
+              Sed egestas mauris vitae placerat tincidunt. Cras quis tortor fringilla, iaculis turpis eu, interdum enim. Vivamus blandit volutpat felis, eu scelerisque urna rhoncus gravida. Nullam maximus dui quis ornare maximus. Vestibulum rhoncus, sapien fringilla mattis lacinia, libero ipsum ultricies velit, at porta orci tortor sit amet urna. Nam varius enim et purus sollicitudin tempus. Nam consequat id sapien et feugiat. Integer lacinia vulputate libero eget lacinia. Suspendisse bibendum erat erat, vitae lacinia justo semper vel. Aliquam erat volutpat. Quisque aliquam nisi in eros egestas sollicitudin. Praesent efficitur quis nibh eu blandit. Aliquam imperdiet laoreet augue, semper gravida lacus porta vitae. Duis in turpis ex. Cras pretium purus sit amet neque pharetra, nec luctus enim rhoncus. Proin sollicitudin ullamcorper libero.
+
+              Maecenas iaculis tortor eros, nec varius arcu feugiat sed. Fusce mollis augue at vulputate commodo. Nullam iaculis lacus quis sapien rhoncus, id egestas mauris accumsan. Aliquam vel commodo ante, vitae eleifend elit. Nullam vel dolor accumsan, varius felis vitae, vulputate odio. Nunc commodo aliquam lectus. Mauris malesuada ligula eu metus finibus, eget fermentum nunc auctor. Phasellus vestibulum urna quis rhoncus dictum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla lacus augue, viverra a ex id, imperdiet accumsan nisl. Nullam tempor consequat sodales. Praesent non arcu placerat eros consequat imperdiet. Donec feugiat ut mi et interdum.
+
+          </div>
+
+    <script>
+
+
+        function switchTest() {
+
+            var checkboxVar = document.getElementById("checboxTest");
+            var divVar = document.getElementById("div1");
+            var bodyVar = document.body;
+
+            checkboxVar.toggleAttribute("checked");
+
+            if (checkboxVar.hasAttribute("checked")) {
+                bodyVar.classList.add("darkmode");
+            }
+            else {
+                bodyVar.classList.remove("darkmode");
+            }
+
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

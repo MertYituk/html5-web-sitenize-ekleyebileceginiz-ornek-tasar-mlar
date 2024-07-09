@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uygulama 04 || Sidebar Menu </title>
+
+    <script src="https://kit.fontawesome.com/aeca299997.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
+    <style>
+        .icon-bar {
+            display:inline-block;
+            background-color: #666;
+            position:relative;
+            left:-300px;   
+            transition:all .5s ease;
+        }
+
+            .icon-bar a {
+                display: block;
+                text-align: left;
+                padding: 20px;
+                color: antiquewhite;
+                font-size: 30px;
+                transition: all ease 0.7s;
+            }
+
+                .icon-bar a:hover {
+                    background-color: black;
+                }
+
+        .active {
+            background-color: green;
+        }
+        
+        .bar1, .bar2, .bar3{
+
+            width:35px;
+            height:5px;
+            background-color:black;
+            margin:8px;
+            transition:0.5s;
+
+        }
+
+        .container{
+
+            cursor:pointer;
+            display:inline-block;
+            float:left;
+            position:absolute;
+            z-index:2;
+            
+        }
+
+        .change .bar1{
+
+            transform:rotate(-45deg) translate(-10px, 7px);
+        }
+        .change .bar2{
+
+            opacity:0;
+        }
+
+        .change .bar3{
+
+            transform:rotate(45deg) translate(-10px, -9px);
+        }
+
+        .open {
+            left: 0;
+            transition: all .5s ease;
+        }
+
+        .white{
+            background-color:white;
+        }
+        
+        .move{
+            left:150px;
+        }
+
+    </style>
+
+</head>
+
+<body style="margin:0;">
+    
+    <div id="outer">
+
+        <div id="test" class="container" onclick="run(this)">
+
+            <div class="bar1 deneme"></div>
+            <div class="bar2 deneme"></div>
+            <div class="bar3 deneme"></div>
+
+        </div>
+
+        <div class="icon-bar" id="menuOpen">
+            <a style="background-color:white;" href="#"></a>
+            <a class="active" href="#"><i class="fas fa-home">Anasayfa</i></a>
+            <a href="#"><i class="fas fa-search"> Ara</i></a>
+            <a href="#"><i class="fas fa-envelope"> İletişim</i></a>
+            <a href="#"><i class="fas fa-globe"> Dil</i></a>
+            <a href="#"><i class="fas fa-trash"> Çöp</i></a>
+
+        </div>
+
+    </div>
+    
+
+    <script>
+
+        $(function () {
+
+            $(".icon-bar a").click(function () {
+
+                $(this).addClass("active").siblings().removeClass("active");
+
+
+            });
+
+
+        });
+
+
+
+    </script>
+
+
+
+    <script>
+
+        function run(x) {
+
+            x.classList.toggle("change");
+
+            document.getElementById("menuOpen").classList.toggle("open");
+
+            //document.getElementById("test").classList.toggle("move");
+
+            //var a = document.getElementsByClassName("deneme");
+
+            //for (i = 0; i < a.length; i++) {
+            //    a[i].classList.toggle("white");
+            //}
+           
+        }
+
+
+    </script>
+
+
+</body>
+</html>

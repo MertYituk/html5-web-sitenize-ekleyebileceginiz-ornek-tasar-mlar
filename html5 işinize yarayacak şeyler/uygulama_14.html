@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uygulama 14 || Network Check </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div style="font-size:50px; color:white">
+
+        🌐:<span id="agBaglantiDurumu" style="color:white"></span>
+
+    </div>
+
+    <script>
+
+        function baglantiDurumunuGuncelle() {
+
+            var agBaglanti = document.getElementById("agBaglantiDurumu");
+
+            if (navigator.onLine == true) {
+
+                agBaglanti.innerHTML = "Çevrimiçi";
+                document.body.style.backgroundColor = "green";
+
+            }
+            else {
+
+                agBaglanti.innerHTML = "Çevrimdışı";
+                document.body.style.backgroundColor = "red";
+
+            }
+
+
+        }
+
+        window.addEventListener("online", baglantiDurumunuGuncelle);
+        window.addEventListener("offline", baglantiDurumunuGuncelle);
+
+        baglantiDurumunuGuncelle();
+
+
+    </script>       
+
+
+</body>
+</html>

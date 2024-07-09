@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uygulama 15 || Toggle Switch</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        
+        .switch{
+            position:relative;
+            display:inline-block;
+            width:100px;
+            height:40px;
+        }
+        #checboxTest{
+            opacity:0;
+            width:0;
+            height:0;
+        }
+        .slider{
+            position:absolute;
+            cursor:pointer;
+            top:0;
+            bottom:0;
+            right:0;
+            left:0;
+            box-shadow:0 0 1px #2196F3;
+        }
+            .slider:before {
+                position: absolute;
+                content: "";
+                width: 50px;
+                height: 40px;
+                background-color: white;
+                color: white;
+                text-align: center;
+                line-height: 40px;
+                transition: .4s;
+            }
+
+        input:checked + .slider{
+            background-color:white;
+        }
+        input:checked + .slider:before{
+            transform: translateX(50px);
+            background-color:green;
+            content:"Evet";
+        }
+        input:not(checked) + .slider:before{
+            background-color: red;
+            content:"Hayır";
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Toggle Switch</h2>
+    <label>Göster : </label>
+    <label class="switch">
+        <input type="checkbox" id="checboxTest" onclick="switchTest()" checked/>
+        <span class="slider"></span>
+
+
+    </label>
+
+
+    <br /><br />
+
+    <div class="div1" id="div1" style="background-color:yellow;">
+
+        TEST
+
+    </div>
+
+    <script>
+
+
+        function switchTest() {
+
+            var checkboxVar = document.getElementById("checboxTest");
+            var divVar = document.getElementById("div1");
+
+            checkboxVar.toggleAttribute("checked");
+
+            if (checkboxVar.hasAttribute("checked")) {
+                divVar.style.display = "block";
+            }
+            else {
+                divVar.style.display = "none";
+            }
+
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

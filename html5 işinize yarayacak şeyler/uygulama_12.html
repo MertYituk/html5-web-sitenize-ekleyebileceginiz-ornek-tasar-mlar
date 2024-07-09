@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uygulama 12 || Enter Button </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+    <style>
+
+        body {
+            padding-top: 50px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        .login {
+            width: 100%;
+            max-width: 350px;
+            padding: 15px;
+            margin: auto;
+        }
+
+            .login .form-control {
+                position: relative;
+                box-sizing: border-box;
+                height: auto;
+                font-size: 16px;
+                padding: 10px;
+            }
+
+        #inputEmail {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        #inputPassword {
+            margin-bottom: 10px;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        #inputEmail:focus {
+            z-index: 5;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form class="login">
+
+        <img class="mb-4" src="logo.png" width="80" height="80" />
+        <h3 class="mb-3 font-weight-normal">Giriş Yap</h3>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus />
+        <input style="display:none;" type="password" id="inputPassword" class="form-control" placeholder="Parola" required />
+
+        <label class="checkbox mb-4 mt-3">
+
+            <input type="checkbox" /> Beni Hatırla
+
+        </label>
+
+        <button onclick="openPasswordInput()" id="btn1" type="submit" class="btn btn-primary btn-lg btn-block">Giriş Yap</button>
+
+
+    </form>
+
+    <script>
+
+        function openPasswordInput() {
+
+            document.getElementById("inputEmail").style.display = "none";
+            document.getElementById("inputPassword").style.display = "block";
+        }
+
+        function openPage() {
+
+            window.open("uygulama_10.html");
+
+        }
+
+
+        var inputEmail = document.getElementById("inputEmail");
+        var inputPassword = document.getElementById("inputPassword");
+
+        inputEmail.addEventListener("keydown", function (event) {
+
+            if (event.keyCode === 13) {
+
+                document.getElementById("btn1").click();
+
+            }
+
+        });
+
+
+        inputPassword.addEventListener("keydown", function (event) {
+
+            if (event.keyCode === 13) {
+
+                document.getElementById("btn1").setAttribute("onclick", "openPage()");
+
+                document.getElementById("btn1").click();
+
+            }
+			
+
+        });
+		
+		
+
+
+
+    </script>
+    
+
+
+</body>
+</html>
